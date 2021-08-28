@@ -1,0 +1,21 @@
+{
+  "name": "cgpn",
+  "version": "0.0.1",
+  "description": "cgpn is omoshiroi svelte component library",
+  "repository": "git+https://github.com/tascript/cgpn.git",
+  "author": "tascript",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "svelte-check": "svelte-check"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.15",
+    "@tsconfig/svelte": "^2.0.1",
+    "svelte": "^3.41.0",
+    "svelte-check": "^2.2.3",
+    "svelte-preprocess": "^4.7.4",
+    "typescript": "^4.3.5",
+    "vite": "^2.4.4"
+  }
+}
