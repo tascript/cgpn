@@ -24,4 +24,18 @@
 		height: var(--height);
 		background-color: #4682b4;
 	}
+  .circle--animation {
+    animation: hamon 0.75s;
+  }
+
+  @keyframes hamon {
+  from {
+    width:  0px;
+    height: 0px;
+  }
+  to {
+    width:  var(--width);
+    height: var(--height);
+  }
+}
 </style>
