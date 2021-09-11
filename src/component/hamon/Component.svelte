@@ -1,17 +1,21 @@
 <script lang='ts'>
   import { onMount, onDestroy } from 'svelte'
-  import { position } from './lib/store'
-  import { handleMouseover } from './lib/event'
+  import { position, isAnimate } from './lib/store'
+  import { handleMouseover, handleMousedown, handleMouseUp } from './lib/event'
 
   onMount(() => {
     window.addEventListener('mousemove', handleMouseover as EventListener)
+    window.addEventListener('mousedown', handleMousedown)
+    window.addEventListener('mouseup', handleMouseUp)
   })
   onDestroy(() => {
     window.removeEventListener('mousemove', handleMouseover as EventListener)
+    window.removeEventListener('mousedown', handleMousedown)
+    window.removeEventListener('mouseup', handleMouseUp)
   })
 </script>
 
-<div class="circle"
+<div class="circle {$isAnimate === true ? 'circle--animation' : ''}"
 	style="transform:translate({$position.x}px,{$position.y}px)"
 ></div>
 
@@ -25,7 +29,7 @@
 		background-color: #4682b4;
 	}
   .circle--animation {
-    animation: hamon 0.75s;
+    animation: hamon 0.25s;
   }
 
   @keyframes hamon {

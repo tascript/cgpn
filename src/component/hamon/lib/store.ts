@@ -19,4 +19,19 @@ const createPoistion = (): CreatePosition => {
     }
 }
 
+interface CreateIsAnimate {
+    subscribe: Writable<boolean>['subscribe']
+    set: (value: boolean) => ReturnType<Writable<boolean>['set']>
+}
+
+const createIsAnimate = (): CreateIsAnimate => {
+    const { subscribe, set } = writable(false)
+
+    return {
+        subscribe,
+        set,
+    }
+}
+
 export const position = createPoistion()
+export const isAnimate = createIsAnimate()
