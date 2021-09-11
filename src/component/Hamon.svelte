@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { onMount, onDestroy } from 'svelte'
   import { spring } from 'svelte/motion'
   import { handleMouseover } from '../lib/hamon'
 
@@ -13,12 +14,24 @@
     precision: 0.1
   })
 
-	function handleJamOver(event) {
-    position.update($position => ({
-      x: $position.x + event.detail.dx,
-			y: $position.y + event.detail.dy
-		}));
-	}
+	const handleJamOver = (event: MouseEvent) => {
+    position.update(($position) => {
+      const dx = $position.x - event.detail.x
+      const dy = $position.y - event.detail.y
+      return
+      ({
+        x: $position.x + dx,
+			  y: $position.y + dy,
+      })
+    })
+  }
+  
+  onMount(() => {
+    window.addEventListener('mousemove', handleMouseover as EventListener)
+  })
+  onDestroy(() => {
+    window.removeEventListener('mousemove', handleMouseover as EventListener)
+  })
 </script>
 
 <div class="circle"

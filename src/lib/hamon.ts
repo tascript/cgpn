@@ -1,16 +1,12 @@
-export const handleMouseover = (e: MouseEvent, x: MouseEvent["clientX"], y: MouseEvent["clientY"]) => {
+export const handleMouseover = (e: MouseEvent) => {
 
-  const dx = e.clientX - x
-  const dy = e.clientY - y
-
-  x = e.clientX
-  y = e.clientY
+  const x = e.clientX
+  const y = e.clientY
 
   const customEvent = new CustomEvent('jamover', {
     detail: {
-      x, y, dx, dy
+      x, y
     }
   })
   window.dispatchEvent(customEvent)
-  window.addEventListener('mousemove', handleMouseover as EventListener)
 }
