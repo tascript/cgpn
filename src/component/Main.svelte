@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hamon from './Hamon.svelte'
+  import Hamon from './hamon/Component.svelte'
 </script>
 
 <main>

@@ -1,30 +1,14 @@
 <script lang='ts'>
   import { onMount, onDestroy } from 'svelte'
   import { spring } from 'svelte/motion'
-  import { handleMouseover } from '../lib/hamon'
-
-  interface Position {
-    x: number,
-    y: number
-  }
+  import { handleMouseover } from './lib/event'
+  import type { Position } from './lib/interface'
 
   let position = spring<Position>({ x: 0, y: 0 }, {
     stiffness: 0.1,
-    dumping: 0.1,
+    damping: 0.1,
     precision: 0.1
   })
-
-	const handleJamOver = (event: MouseEvent) => {
-    position.update(($position) => {
-      const dx = $position.x - event.detail.x
-      const dy = $position.y - event.detail.y
-      return
-      ({
-        x: $position.x + dx,
-			  y: $position.y + dy,
-      })
-    })
-  }
   
   onMount(() => {
     window.addEventListener('mousemove', handleMouseover as EventListener)
