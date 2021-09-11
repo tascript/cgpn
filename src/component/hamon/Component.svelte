@@ -1,15 +1,8 @@
 <script lang='ts'>
   import { onMount, onDestroy } from 'svelte'
-  import { spring } from 'svelte/motion'
+  import { position } from './lib/store'
   import { handleMouseover } from './lib/event'
-  import type { Position } from './lib/interface'
 
-  let position = spring<Position>({ x: 0, y: 0 }, {
-    stiffness: 0.1,
-    damping: 0.1,
-    precision: 0.1
-  })
-  
   onMount(() => {
     window.addEventListener('mousemove', handleMouseover as EventListener)
   })
