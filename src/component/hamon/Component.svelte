@@ -18,21 +18,29 @@
 </script>
 
 {#each Array(repeat) as _, i}
-<div class="circle--base {$isAnimate === true ? 'circle--animation' : ''}" 
-	style="transform:translate({$position.x}px,{$position.y}px); animation-delay: {.15 * i}s;"
-></div>
+<div class="circle--layout" style="transform:translate({$position.x}px,{$position.y}px)">
+    <div class="circle--base {$isAnimate === true ? 'circle--animation' : ''}" style="animation-delay: {.15 * i}s;">
+    </div>
+</div>
 {/each}
 
 <style>
+  .circle--layout {
+    --width: 100px;
+    --height: 100px;
+    position: absolute;
+    width: var(--width ); 
+		height: var(--height);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 	.circle--base {
-		--width: 35px;
-    --height: 35px;
     border-radius: 50%;
 		width: var(--width);
 		height: var(--height);
     opacity: 0;
 		border: solid thin #4682b4;
-    position: absolute;
 	}
   .circle--animation {
     animation: hamon 1s;
@@ -47,7 +55,7 @@
   to {
     width:  var(--width);
     height: var(--height);
-    opacity: 0 ;
+    opacity: 0;
   }
 }
 </style>
