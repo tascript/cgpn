@@ -3,7 +3,7 @@
   import { position, isAnimate } from './lib/store'
   import { handleMouseover, handleMousedown, handleMouseUp } from './lib/event'
 
-  export let repeat
+  export let repeat: number
 
   onMount(() => {
     window.addEventListener('mousemove', handleMouseover as EventListener)
