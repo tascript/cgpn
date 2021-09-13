@@ -18,8 +18,8 @@
 </script>
 
 {#each Array(repeat) as _, i}
-<div class="circle--base {$isAnimate === true ? 'circle--animation' : ''} circle--{i}"
-	style="transform:translate({$position.x}px,{$position.y}px)"
+<div class="circle--base {$isAnimate === true ? 'circle--animation' : ''}" 
+	style="transform:translate({$position.x}px,{$position.y}px); animation-delay: {.15 * i}s;"
 ></div>
 {/each}
 
