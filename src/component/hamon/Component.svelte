@@ -40,7 +40,7 @@
 		width: var(--width);
 		height: var(--height);
     opacity: 0;
-		border: solid thin #4682b4;
+		border: solid 2px #4682b4;
 	}
   .circle--animation {
     animation: hamon 1s;
