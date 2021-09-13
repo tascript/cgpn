@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <Hamon />
+  <Hamon repeat={3}/>
 </main>
 
 <style>

@@ -3,6 +3,8 @@
   import { position, isAnimate } from './lib/store'
   import { handleMouseover, handleMousedown, handleMouseUp } from './lib/event'
 
+  export let repeat
+
   onMount(() => {
     window.addEventListener('mousemove', handleMouseover as EventListener)
     window.addEventListener('mousedown', handleMousedown)
@@ -15,31 +17,37 @@
   })
 </script>
 
-<div class="circle {$isAnimate === true ? 'circle--animation' : ''}"
+{#each Array(repeat) as _, i}
+<div class="circle--base {$isAnimate === true ? 'circle--animation' : ''} circle--{i}"
 	style="transform:translate({$position.x}px,{$position.y}px)"
 ></div>
+{/each}
 
 <style>
-	.circle {
-		--width: 30px;
-    --height: 30px;
+	.circle--base {
+		--width: 35px;
+    --height: 35px;
     border-radius: 50%;
 		width: var(--width);
 		height: var(--height);
-		background-color: #4682b4;
+    opacity: 0;
+		border: solid thin #4682b4;
+    position: absolute;
 	}
   .circle--animation {
-    animation: hamon 0.25s;
+    animation: hamon 1s;
   }
 
   @keyframes hamon {
   from {
     width:  0px;
     height: 0px;
+    opacity: 1;
   }
   to {
     width:  var(--width);
     height: var(--height);
+    opacity: 0 ;
   }
 }
 </style>
