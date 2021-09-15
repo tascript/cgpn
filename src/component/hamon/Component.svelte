@@ -19,8 +19,8 @@
 
 {#each Array(repeat) as _, i}
 <div class="circle--layout" style="transform:translate({$position.x}px,{$position.y}px)">
-    <div class="circle--base {$isAnimate ? 'circle--animation' : ''}" style="animation-delay: {.15 * i}s;">
-    </div>
+  <div class="circle--base {$isAnimate ? 'circle--animation' : ''}" style="animation-delay: {.15 * i}s;">
+  </div>
 </div>
 {/each}
 
