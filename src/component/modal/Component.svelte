@@ -7,14 +7,8 @@
   })
 </script>
 
-<div class="circle">
+<div class="modal">
 </div>
 
 <style>
-	.circle {
-    border-radius: 50%;
-		width: 30px;
-		height: 30px;
-	}
-}
 </style>
