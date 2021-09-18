@@ -5,6 +5,7 @@
 
 <main>
   <Hamon repeat={3}/>
+  <Modal />
 </main>
 
 <style>
