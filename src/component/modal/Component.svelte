@@ -7,7 +7,7 @@
   })
 </script>
 
-<div class="modal {$display ? 'modal--fadein' : 'modal--fadeout'}">
+<div class="modal {display ? 'modal--fadein' : 'modal--fadeout'}">
   <div class="content">
     <slot></slot>
   </div>
