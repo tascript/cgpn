@@ -7,7 +7,7 @@
 <main>
   <Hamon repeat={3}/>
   <Modal bind:display={display}>
-    <p>text</p>
+    <h2>This is Modal</h2>
   </Modal>
   <button on:click={() => display = true}>Modal</button>
 </main>
