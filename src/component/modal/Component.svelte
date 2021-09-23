@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { onMount, onDestroy } from 'svelte'
+  import { fade } from 'svelte/trainsition'
   export let display: boolean
   onMount(() => {
   })
@@ -7,7 +8,9 @@
   })
 </script>
 
-<div class="modal {display ? 'modal--fadein' : 'modal--fadeout'}">
+<div
+  class="modal"
+>
   <div class="content">
     <slot></slot>
   </div>
@@ -26,27 +29,5 @@
     align-items: center;
     width: 100%;
     height: 100%;
-  }
-  .modal--fadein {
-    animation: fadein 0.3s
-  }
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .modal--fadeout {
-    animation: fadeout 0.3s
-  }
-  @keyframes fadeout {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
   }
 </style>
