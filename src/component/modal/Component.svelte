@@ -2,10 +2,6 @@
   import { onMount, onDestroy } from 'svelte'
   import { fade } from 'svelte/transition'
   export let display: boolean
-  onMount(() => {
-  })
-  onDestroy(() => {
-  })
 </script>
 
 {#if display}
