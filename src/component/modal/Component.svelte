@@ -1,5 +1,4 @@
-<script lang='ts'>
-  import { onMount, onDestroy } from 'svelte'
+<script lang="ts">
   import { fade } from 'svelte/transition'
   export let display: boolean
 </script>
@@ -8,11 +7,11 @@
   <div
     class="modal--layout"
     transition:fade
-    on:mousedown={() => display = false}
+    on:mousedown={() => (display = false)}
   >
     <div class="modal--card--layout">
       <div class="modal--card">
-        <slot></slot>
+        <slot />
       </div>
     </div>
   </div>
@@ -29,13 +28,13 @@
     width: 100%;
     height: 100%;
     z-index: 100;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.5);
   }
   .modal--card--layout {
     position: relative;
     min-width: 300px;
     background: white;
-    border-radius: .3rem;
+    border-radius: 0.3rem;
   }
   .modal--card {
     margin: 0 2rem;
